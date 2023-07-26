@@ -3,5 +3,18 @@
 {% block content %}
 
 <h1>{{room.name}}</h1>
+<h4>{{room.description}}</h4>
+
+<hr>
+<h2>Messages</h2>
+
+{% for message in messages  %}
+    <div>
+        <span>@{{message.user.username}}</span>
+    </div>
+    <p>{{message.body}}</p>
+
+    <hr>
+{% endfor %}
 
 {% endblock content %}
