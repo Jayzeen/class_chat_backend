@@ -39,10 +39,14 @@
                 <span>@{{room.host.username}}</span>
                 <h5>
                     {{room.id}} -- <a href="{% url 'room' room.id %}">{{room.name}}</a>
-                    &ensp; 
-                    <a href="{% url 'update-room' room.id %}">Edit</a>
-                    &ensp;
-                    <a href="{% url 'delete-room' room.id %}">Delete</a>
+                    
+                    {% if request.user == room.host %}
+                        &ensp; 
+                        <a href="{% url 'update-room' room.id %}">Edit</a>
+                        &ensp;
+                        <a href="{% url 'delete-room' room.id %}">Delete</a>
+                    {% endif %}
+                    
                 </h5> 
                 <small>{{room.topic.name}}</small>
                 <hr>
