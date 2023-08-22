@@ -71,13 +71,15 @@ def home(request):
     
     topics = Topic.objects.all()
     rooms_count = rooms.count()
-    context = {'rooms': rooms, 'topics': topics, 'rooms_count' : rooms_count}
+    activity_messages = Message.objects.filter(Q(room__topic__name__icontains=q))
+    context = {'rooms': rooms, 'topics': topics, 
+               'rooms_count' : rooms_count, 'activity_messages': activity_messages}
     return render(request, 'base/home.html', context)
 
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
-    room_messages = Message.objects.filter(room=room).order_by('-created')
+    room_messages = Message.objects.filter(room=room)
     participants = room.participants.all()
     
     # Handling posting of messages in a room
