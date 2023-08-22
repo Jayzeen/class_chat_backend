@@ -77,8 +77,20 @@ def home(request):
 
 def room(request, pk):
     room = Room.objects.get(id=pk)
-    messages = Message.objects.filter(room=room)
-    context = {'room': room, 'userMessages': messages}
+    room_messages = Message.objects.filter(room=room).order_by('-created')
+    participants = room.participants.all()
+    
+    # Handling posting of messages in a room
+    if request.method == 'POST':
+        message = Message.objects.create(
+            user=request.user,
+            room=room,
+            body=request.POST.get('body')
+        )
+        room.participants.add(request.user)
+        return redirect('room', pk=room.id)
+    
+    context = {'room': room, 'userMessages': room_messages, 'participants': participants}
     return render(request, 'base/room.html', context)
 
 
@@ -120,7 +132,7 @@ def deleteRoom(request, pk):
     room = Room.objects.get(id=pk)
     
     if request.user != room.host:
-        messages.error(request, 'You donot have permission to delete this room')
+        messages.error(request, 'You do not have permission to delete this room')
         return redirect('home')
     
     if request.method == 'POST':
@@ -128,3 +140,16 @@ def deleteRoom(request, pk):
         return redirect('home')
     
     return render(request, 'base/delete.html', {'obj': room})
+
+@login_required(login_url='/login')
+def deleteMessage(request, room_pk, pk):
+    message = Message.objects.get(id=pk)
+    
+    if request.user != message.user:
+        messages.error(request, 'You do not have permission to delete this message')
+    
+    if request.method == 'POST':
+        message.delete()
+        return redirect('room', pk=room_pk)
+    
+    return render(request, 'base/delete.html', {'obj': message})
