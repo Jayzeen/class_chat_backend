@@ -17,6 +17,7 @@ settings_local.py
 
 # Ignore media and static files (assuming they are served separately)
 media/
+theme/
 
 # Ignore virtual environment files
 venv/
