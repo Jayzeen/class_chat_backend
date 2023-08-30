@@ -784,9 +784,15 @@ a {
   margin-left: -4.2rem;
 }
 
+.activity_page{
+  height: 500px;
+  
+}
+
 .roomListRoom__actions svg {
   fill: var(--color-light-gray);
 }
+
 
 /*==============================
 =>  Create Room
@@ -986,7 +992,7 @@ a {
   padding-left: 2rem;
   padding-right: 2rem;
   height: 80.5vh;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   padding-bottom: 0;
 }
 

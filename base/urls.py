@@ -9,10 +9,14 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('room/<str:pk>/', views.room, name="room"),
     path('profile/<str:pk>/', views.userProfile, name="user-profile"),
+    path('update-profile/', views.updateProfile, name="update-profile"),
     
     path('create-room/', views.createRoom, name="create-room"),
     path('update-room/<str:pk>/', views.updateRoom, name="update-room"),
     path('delete-room/<str:pk>/', views.deleteRoom, name="delete-room"),
     
     path('delete-message/<str:room_pk>/<str:pk>/', views.deleteMessage, name="delete-message"),
+    
+    path('topics/', views.topicsPage, name="topics"),
+    path('activity/', views.activityPage, name="activity"),
 ]
