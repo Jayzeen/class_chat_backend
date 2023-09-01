@@ -4,7 +4,7 @@
     <div class="container">
       <a href="{% url 'home' %}" class="header__logo">
         <img src="{% static 'images/logo.png' %}" />
-        <h1>StudyBuddy</h1>
+        <h1>ClassChat</h1>
       </a>
       <form class="header__search" action="{% url 'home' %}" method="GET">
         <label>
@@ -25,7 +25,7 @@
         <div class="header__user">
           <div class="avatar avatar--medium active">
             <a href="{% url 'user-profile' user.id %}">
-              <img src="https://randomuser.me/api/portraits/men/37.jpg" />
+              <img src="{{request.user.avatar.url}}" />
             </a>
           </div>
           <a href="{% url 'update-profile' %}">
