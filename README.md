@@ -2,6 +2,9 @@
 
 ClassChat is a web application built with Django and PostgreSQL that allows users to create and join channels to discuss various topics in a chat-based environment. Similar to Discord, ClassChat provides a platform for users to engage in conversations, share ideas, and connect with others who share similar interests.
 
+![preview](https://github.com/Jayzeen/class_chat_backend/assets/63718579/cb3ff717-f3b5-40da-9a06-d437fa7a1839)
+[Demo website](https://classchat-jayzeen.vercel.app/) 
+
 ## Features
 
 - **User Authentication**: Secure user registration and authentication system.
