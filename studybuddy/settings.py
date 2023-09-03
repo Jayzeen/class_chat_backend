@@ -75,8 +75,12 @@ WSGI_APPLICATION = "studybuddy.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "classchat",
+        'USER': 'postgres',
+        'PASSWORD': '33722765lena',
+        'HOST': 'localhost',  # Or the hostname where your PostgreSQL server is running.
+        'PORT': '5432', 
     }
 }
 

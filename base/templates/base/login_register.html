@@ -127,4 +127,11 @@
 
   {% endif %}
 
+  <main>
+    {% if messages %}
+        {% include 'errorModal.html' %}
+  {% endif %}
+  </main>
+  
+
 {% endblock content %}
