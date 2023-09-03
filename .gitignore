@@ -41,8 +41,8 @@ locale/
 *.mo
 
 # Ignore pip generated files
-requirements.txt
 pip-log.txt
 
 # Ignore any sensitive or secret information
 secret_key.txt
+*.env

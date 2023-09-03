@@ -68,12 +68,12 @@ These instructions will help you set up a local development environment and run 
 ## Acknowledgments
 
 - Special thanks to the Django and PostgreSQL communities for their excellent documentation and open-source contributions.
-- Special thanks to [Dennis Ivy](https://github.com/divanov11) for their amazing tutorial that inspired and helped us in the development of ClassChat.
+- Special thanks to [Dennis Ivy](https://github.com/divanov11) for his amazing tutorial that inspired and helped me in the development of ClassChat.
 
 
 ## Contact
 
-If you have any questions, suggestions, or need assistance, please contact us at [jayzjj7@gmail.com](mailto:jayzjj7@gmail.com).
+If you have any questions, suggestions, or need assistance, please contact me at [jayzjj7@gmail.com](mailto:jayzjj7@gmail.com).
 
 
 
