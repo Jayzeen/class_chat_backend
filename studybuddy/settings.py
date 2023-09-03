@@ -1,6 +1,6 @@
 from pathlib import Path
 import environ
-
+import os
 
 env = environ.Env()
 environ.Env.read_env()
@@ -130,6 +130,7 @@ MEDIA_URL = "/images/avatars/"
 STATICFILES_DIRS =[
     BASE_DIR / 'static'
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 MEDIA_ROOT = BASE_DIR / 'static/images/avatars'
 
@@ -139,3 +140,7 @@ MEDIA_ROOT = BASE_DIR / 'static/images/avatars'
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CORS_ALLOW_ALL_ORIGINS = True 
+
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+# Or * to allow all
+ALLOWED_HOSTS = ['*']
